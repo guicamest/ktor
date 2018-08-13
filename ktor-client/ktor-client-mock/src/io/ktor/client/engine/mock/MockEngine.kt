@@ -8,8 +8,8 @@ import kotlinx.coroutines.experimental.*
 
 
 class MockEngine(override val config: MockEngineConfig) : HttpClientEngine {
-    override val dispatcher: CoroutineDispatcher =
-        Unconfined
+    override val dispatcher: CoroutineDispatcher
+        get() = TODO()
 
     override suspend fun execute(call: HttpClientCall, data: HttpRequestData): HttpEngineCall {
         val request = data.toRequest(call)

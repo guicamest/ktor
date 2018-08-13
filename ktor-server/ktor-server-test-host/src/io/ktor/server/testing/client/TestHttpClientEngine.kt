@@ -17,7 +17,8 @@ import kotlin.coroutines.experimental.*
 class TestHttpClientEngine(override val config: TestHttpClientConfig) : HttpClientEngine {
     private val app: TestApplicationEngine = config.app
 
-    override val dispatcher: CoroutineDispatcher = ioCoroutineDispatcher
+    override val dispatcher: CoroutineDispatcher
+            get() = TODO()
 
     override suspend fun execute(call: HttpClientCall, data: HttpRequestData): HttpEngineCall {
         val request = TestHttpClientRequest(call, this, data)
