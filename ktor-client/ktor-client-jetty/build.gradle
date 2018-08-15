@@ -1,6 +1,9 @@
 description = ''
 dependencies {
     compile project(':ktor-client:ktor-client-core:ktor-client-core-jvm')
+
+    implementation group: 'org.jetbrains.kotlinx', name: 'kotlinx-coroutines-jdk8', version: coroutines_version
+
     compile group: 'org.eclipse.jetty.http2', name: 'http2-client', version: jetty_version
     compile group: 'org.eclipse.jetty', name: 'jetty-alpn-openjdk8-client', version: jetty_version
     compile group: 'org.eclipse.jetty', name: 'jetty-alpn-java-client', version: jetty_version
